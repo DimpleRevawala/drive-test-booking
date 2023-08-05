@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('layout/head'); -%>
+  <body>
+    <!-- Navigation-->
+    <%- include ('layout/navigation'); -%>
+    <!-- Page Header-->
+    <header
+      class="masthead"
+      style="background-image: url('assets/img/home-bg.jpeg')"
+    >
+      <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="site-heading">
+              <h1>G Test</h1>
+              <span class="subheading">DriveTest Booking Kiosk</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+      
+      <div class="container mt-2">
+        <div>
+          <% if(loggInUser) { -%>
+          <div class="item">
+            <div class="card item-card card-block">
+              <h4 class="card-title text-right">
+                Name::
+                <i class="material-icons"> <%= loggInUser.firstname %></i>
+              </h4>
+              <h5 class="item-card-title mt-3 mb-3">
+                Last Name: <%= loggInUser.lastname %>
+              </h5>
+              <p class="card-text">
+                <span>Licence Number : </span><%=loggInUser.licenceNumber %>
+                <br /><br />
+                <span>Age : </span><%= loggInUser.age %> <br />
+                <br />
+                <span>DOB : </span><%= loggInUser.dob %> <br /><br />
+                <form action="/user/update/<%=loggInUser.licenceNumber %>" method="post">
+                  <div class="row">
+                    <h3>Car Details</h3>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="make">make</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="make"
+                          aria-describedby="make"
+                          value="<%= loggInUser.carDetails.make %>"
+                          name="make"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="model">model</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="model"
+                          aria-describedby="model"
+                          value="<%= loggInUser.carDetails.model %> "
+                          name="model"
+                        />
+                      </div>
+                    </div>
+      
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="year">Year</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="year"
+                          aria-describedby="year"
+                          value="<%=loggInUser.carDetails.year %>"
+                          name="year"
+                        />
+                      </div>
+      
+                      <div class="form-group">
+                        <label for="platName">plat number</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="platName"
+                          aria-describedby="platName"
+                          value="<%=loggInUser.carDetails.platnumber %>"
+                          name="platName"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary mt-4">Edit</button>
+                </form>
+              
+              </p>
+              <% } -%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer-->
+    <%- include ('layout/footer'); -%>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

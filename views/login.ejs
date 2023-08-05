@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('layout/head'); -%>
+    <body>
+       <!-- Navigation-->
+       <%- include ('layout/navigation'); -%>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/home-bg.jpeg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Login & SignUp</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="container px-4 px-lg-5 mb-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                  <div class="col-md-10 col-lg-8 col-xl-7">
+                    <form class="form_licence" method="post" action="/create/user">
+                      <div class="form-group">
+                        <h3>Sign Up</h3>
+                        <label for="userName">User Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="userName"
+                          aria-describedby="userName"
+                          placeholder="Enter your User name"
+                          name="userName"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          aria-describedby="password"
+                          placeholder="password"
+                          name="password"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="confirmPassword"
+                          aria-describedby="confirmPassword"
+                          placeholder="Enter again password"
+                          name="confirmPassword"
+                        />
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="userType">User Type</label>
+                        <select class="form-select" aria-label="Default select example" id="userType" name="userType">
+                            <option value="driver" selected>Driver</option>
+                            <option value="examiner">Examiner</option>
+                            <option value="admin">Admin</option>
+                          </select>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary mt-4">Register</button>
+                        </div>
+                    </div>
+                     
+                      </div>
+                    
+                     
+                    </form>
+                  </div>
+                </div>
+        </div>
+            <div class="col-md-6">
+                <div class="container px-4 px-lg-5 mb-5">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                      <div class="col-md-10 col-lg-8 col-xl-7">
+                        <form class="form_licence" method="post" action="/user/login">
+                          <h3>Login</h3>
+                          <div class="form-group">
+                            <label for="userName">User Name</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="userName"
+                              aria-describedby="userName"
+                              placeholder="Enter your User name"
+                              name="userName"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label for="password">Password</label>
+                            <input
+                              type="password"
+                              class="form-control"
+                              id="password"
+                              aria-describedby="password"
+                              placeholder="password"
+                              name="password"
+                            />
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary mt-4">Login</button>
+                            </div>
+                        </div>
+              
+                         
+                          </div>
+                        
+                         
+                        </form>
+                      </div>
+                   
+            </div>
+        </div>
+        
+   
+        </div>
+        
+        
+        
+        <!-- Footer-->
+        <%- include ('layout/footer'); -%>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
